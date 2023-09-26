@@ -2,8 +2,10 @@ package goja
 
 import (
 	"fmt"
-	"github.com/dop251/goja/token"
+	"reflect"
 	"sort"
+
+	"github.com/dop251/goja/token"
 
 	"github.com/dop251/goja/ast"
 	"github.com/dop251/goja/file"
@@ -96,6 +98,14 @@ type binding struct {
 	isArg        bool
 	isVar        bool
 	inStash      bool
+}
+
+func (p *Program) GetSize() int {
+	size := len(p.code) * int(reflect.TypeOf(p.code[0]).Size())
+	size += len(p.values) * int(reflect.TypeOf(p.values[0]).Size())
+	size += len(p.srcMap) * int(reflect.TypeOf(p.srcMap[0]).Size())
+	size += int(reflect.TypeOf(p.funcName).Size())
+	return size
 }
 
 func (b *binding) getAccessPointsForScope(s *scope) *[]int {
