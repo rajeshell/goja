@@ -7,7 +7,7 @@ import (
 	"sync"
 	"unsafe"
 
-	"github.com/dop251/goja/unistring"
+	"github.com/rajeshell/goja/unistring"
 )
 
 type typedArraySortCtx struct {

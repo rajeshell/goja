@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/dop251/goja/unistring"
+	"github.com/rajeshell/goja/unistring"
 )
 
 type resultType uint8

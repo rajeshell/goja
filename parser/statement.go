@@ -6,10 +6,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/dop251/goja/ast"
-	"github.com/dop251/goja/file"
-	"github.com/dop251/goja/token"
 	"github.com/go-sourcemap/sourcemap"
+	"github.com/rajeshell/goja/ast"
+	"github.com/rajeshell/goja/file"
+	"github.com/rajeshell/goja/token"
 )
 
 func (self *_parser) parseBlockStatement() *ast.BlockStatement {
